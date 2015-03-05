@@ -1,0 +1,45 @@
+<template name="dashboard">
+  <div class="template-dashboard">
+    <div class="page-header">
+      <h1>Dashboard</h1>
+    </div>
+
+ <form id="uploadForm">
+   <div class="form-group">
+     <div class="progress">
+       <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+	 <span class="sr-only">{{progress}}% Complete</span>
+       </div>
+     </div>
+   </div>
+   <div class="form-group">
+     <label for="upload">Name</label> 
+     <input class="form-control" type="text" name="name"/>
+   </div>
+   <div class="form-group">
+     <label for="preview">Preview</label> 
+     <img src="{{previewUrl}}" height="120" width="120"/>
+   </div>
+   <div class="form-group">
+     <label for="upload">Upoad</label> 
+     <span class="btn btn-default btn-file">
+     <input class="uploadInput" type="file" name="upload"/>
+     </span>
+   </div>
+   <div class="form-group">
+     <input class="uploadSubmit btn" type="submit" value="Add"/>
+   </div>
+</form> 
+
+
+    <ul class="list-group">
+      {{#each files}}
+      <li class="list-group-item"><img src="{{url}}" height="120" width="120"/><a href="{{url}}" target="_blank">{{url}}</a></li>
+      {{/each}}
+    </ul>
+
+    <div class="row">
+      <button class="deleteAll btn btn-danger">Delete All &times;</button>
+    </div>
+  </div>
+</template>

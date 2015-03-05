@@ -1,0 +1,6 @@
+{
+  "AWSAccessKeyId":"ACCESSKEYID",
+  "AWSSecretAccessKey": "SECRETACCESSKEY",
+  "region": "us-east-1",
+  "bucket": "BUCKETNAME"
+}
