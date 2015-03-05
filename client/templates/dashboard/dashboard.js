@@ -22,7 +22,7 @@ Template.dashboard.events({
 	  console.log(error);
 	  alert(error);
 	} else {
-	  var file = {'url': downloadUrl};
+	  var file = {'url': downloadUrl, 'name': nameInput.value, 'uploadDt': new Date()};
 	  Meteor.users.update(Meteor.userId(), {$push: {"profile.files": file}});
 	  // Items.insert(Meteor.userId(), {
 	  //   'name': nameInput,
@@ -38,6 +38,11 @@ Template.dashboard.events({
 
   'click .deleteAll': function() {
     Meteor.users.update(Meteor.userId(), {$set: {"profile.files": []}});
+  },
+
+  'click .delete': function() {
+    console.log(this);
+    Meteor.users.update(Meteor.userId(), { $pull: { 'profile.files': {'url': this.url}}});
   }
 
 });
