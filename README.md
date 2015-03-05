@@ -2,9 +2,12 @@ cp settings.example.json settings.json
 
 and enter S3 credentials
 
-Run using 
+Run usisng 
 
 meteor --settings settings.json Run
 
-# meteor-boilerplate
-# meteor-slingshot
+Uses:
+
+* meteor-boilerplate
+
+* meteor-slingshot
