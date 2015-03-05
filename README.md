@@ -4,7 +4,7 @@ and enter S3 credentials
 
 Run using 
 
-meteor --settings settings.json Run
+meteor --settings settings.json run
 
 Uses:
 
